@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Riesling;
+
+  letter-spacing: 0.4vh;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+input {
+  font-family: Riesling;
+  letter-spacing: 0.4vh;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Arcade Future;
+  src: url("./assets/ArcadeFuture.otf");
+}

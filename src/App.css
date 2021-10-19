@@ -1,0 +1,248 @@
+.App {
+  text-align: center;
+
+  background-image: url("./assets/Superset.jpeg");
+  background-size: cover;
+  background-position: right;
+  transition: 0.4s ease-in-out;
+  max-width: 60vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+.App.Warm {
+  text-align: center;
+
+  background-image: url("./assets/warm.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s ease-in-out;
+  max-width: 60vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+.App.Warmest {
+  text-align: center;
+
+  background-image: url("./assets/warmest.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s ease-in-out;
+  max-width: 60vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+.App.Cold {
+  text-align: center;
+
+  background-image: url("./assets/cold.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s ease-in-out;
+  max-width: 60vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+.App.Coldest {
+  text-align: center;
+  background-image: url("./assets/coldest.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s ease-in-out;
+  max-width: 60vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Blur {
+  position: absolute;
+  z-index: -1;
+  background-image: url("./assets/Superset.jpeg");
+  filter: blur(6px);
+  -webkit-filter: blur(6px);
+  -webkit-transform: scaleX(-1);
+  transform: translate(-8px, -8px) scaleX(-1);
+  height: 103vh;
+  width: 103vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Warmest.Blur {
+  position: absolute;
+  z-index: -1;
+  background-image: url("./assets/warmest.jpeg");
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  transform: translate(-5px -5px);
+  height: 103vh;
+  width: 103vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Warm.Blur {
+  position: absolute;
+  z-index: -1;
+  background-image: url("./assets/warm.jpeg");
+  filter: blur(6px);
+  -webkit-filter: blur(6px);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  transform: translate(-5px -5px);
+  transform: translate(-5px, -5px);
+  height: 103vh;
+  width: 103vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Cold.Blur {
+  position: absolute;
+  z-index: -1;
+  background-image: url("./assets/cold.jpeg");
+  filter: blur(6px);
+  -webkit-filter: blur(6px);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  transform: translate(-5px -5px);
+  height: 103vh;
+  width: 103vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Coldest.Blur {
+  position: absolute;
+  z-index: -1;
+  background-image: url("./assets/coldest.jpeg");
+  filter: blur(6px);
+  -webkit-filter: blur(6px);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  transform: translate(-5px -5px);
+  height: 103vh;
+  width: 103vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main {
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.5)
+  );
+  padding: 5vh;
+}
+
+.search-box {
+  width: 100%;
+  margin: 0 0 10vh;
+}
+
+.search-bar {
+  display: flex;
+  position: absolute;
+  align-self: center;
+  width: 49vh;
+  padding: 5px;
+
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+
+  background: rgba(255, 218, 185, 0.719);
+  border-radius: 0px 0px 16px 16px;
+  margin-top: -5vh;
+
+  box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
+
+  color: #460f0f;
+  font-size: 1.75vh;
+  text-align: center;
+  transition: 0.4s ease-in-out;
+}
+
+.search-bar:hover {
+  background: peachpuff;
+  color: #61616186;
+  padding: 10px;
+  font-size: 3vh;
+  font-weight: bold;
+  transition: 0.4s ease-in-out;
+}
+
+.search-bar:focus {
+  background: peachpuff;
+  color: #242424;
+
+  border-top: none;
+  padding: 10px;
+  font-size: 3vh;
+  transition: 0.4s ease-in-out;
+}
+
+.location-box .location {
+  color: peachpuff;
+  font-size: 9vh;
+  font-weight: 500;
+  text-shadow: 1px 3px rgba(50, 50, 70, 0.5);
+  text-decoration: underline 3px;
+}
+
+.location-box .date {
+  color: peachpuff;
+  font-size: 3vh;
+  font-weight: 300;
+  text-shadow: 1px 1px rgba(50, 50, 70, 0.5);
+  font-style: italic;
+}
+
+.weather-box .temp {
+  position: relative;
+  display: inline-block;
+  margin: 30px auto;
+  border-radius: 15px;
+
+  padding: 2vh 4vh;
+
+  color: peachpuff;
+  font-size: 10vh;
+  font-weight: 900;
+
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  text-decoration: underline 3px;
+}
+
+.weather-box .feelsLike {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2vh;
+  padding: none;
+}
+
+.weather-box .weather {
+  color: peachpuff;
+  font-size: 4vh;
+  font-weight: 700;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  margin-bottom: 2vh;
+  padding: 2vh;
+}
+
+.weather-icon {
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vh;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 30vh;
+  max-width: 40vh;
+}
