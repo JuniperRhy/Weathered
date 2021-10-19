@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-
+  background: black;
   background-image: url("./assets/Superset.jpeg");
   background-size: cover;
   background-position: right;
@@ -8,10 +8,11 @@
   max-width: 60vh;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 30px;
 }
 .App.Warm {
   text-align: center;
-
+  background: black;
   background-image: url("./assets/warm.jpeg");
   background-size: cover;
   background-position: bottom;
@@ -19,10 +20,11 @@
   max-width: 60vh;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 30px;
 }
 .App.Warmest {
   text-align: center;
-
+  background: black;
   background-image: url("./assets/warmest.jpeg");
   background-size: cover;
   background-position: bottom;
@@ -30,10 +32,11 @@
   max-width: 60vh;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 30px;
 }
 .App.Cold {
   text-align: center;
-
+  background: black;
   background-image: url("./assets/cold.jpeg");
   background-size: cover;
   background-position: bottom;
@@ -41,9 +44,11 @@
   max-width: 60vh;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 30px;
 }
 .App.Coldest {
   text-align: center;
+  background: black;
   background-image: url("./assets/coldest.jpeg");
   background-size: cover;
   background-position: bottom;
@@ -51,6 +56,7 @@
   max-width: 60vh;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 30px;
 }
 
 .Blur {
@@ -66,6 +72,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  transition: ease 0.1ms;
 }
 .Warmest.Blur {
   position: absolute;
@@ -81,6 +88,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  transition: ease 0.1ms;
 }
 .Warm.Blur {
   position: absolute;
@@ -97,6 +105,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  transition: ease 0.1ms;
 }
 .Cold.Blur {
   position: absolute;
@@ -112,6 +121,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  transition: ease 0.1ms;
 }
 .Coldest.Blur {
   position: absolute;
@@ -127,9 +137,11 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  transition: ease 0.1ms;
 }
 
 main {
+  border-radius: 30px;
   min-height: 100vh;
   background: linear-gradient(
     to bottom,
@@ -137,18 +149,23 @@ main {
     rgba(0, 0, 0, 0.5)
   );
   padding: 5vh;
+  transition: 0.4s ease-in-out;
+  box-shadow: 0px 0px 50px rgb(124, 124, 124);
 }
 
 .search-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   margin: 0 0 10vh;
 }
 
 .search-bar {
-  display: flex;
-  position: absolute;
-  align-self: center;
-  width: 49vh;
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
   padding: 5px;
 
   appearance: none;
@@ -188,11 +205,24 @@ main {
 }
 
 .location-box .location {
+  margin-top: -8vh;
   color: peachpuff;
   font-size: 9vh;
   font-weight: 500;
   text-shadow: 1px 3px rgba(50, 50, 70, 0.5);
   text-decoration: underline 3px;
+}
+.Title {
+  color: peachpuff;
+  font-size: 9vh;
+  font-weight: 500;
+  text-shadow: 1px 3px rgba(50, 50, 70, 0.5);
+  text-decoration: underline 3px;
+  cursor: pointer;
+}
+.Title:hover {
+  /* color: #b3b0b0; */
+  text-shadow: 2px 2px 10px #eee;
 }
 
 .location-box .date {
@@ -210,29 +240,56 @@ main {
   border-radius: 15px;
 
   padding: 2vh 4vh;
+  margin-bottom: -6vh;
+  margin-top: -1vh;
 
   color: peachpuff;
-  font-size: 10vh;
+  font-size: 12vh;
   font-weight: 900;
 
   text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
   text-decoration: underline 3px;
+  cursor: pointer;
 }
 
 .weather-box .feelsLike {
   margin-left: auto;
   margin-right: auto;
-  font-size: 2vh;
+  font-size: 3vh;
   padding: none;
+  cursor: pointer;
 }
 
 .weather-box .weather {
+  display: flex;
+  flex-direction: column;
   color: peachpuff;
   font-size: 4vh;
   font-weight: 700;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
-  margin-bottom: 2vh;
+  margin-top: -1vh;
   padding: 2vh;
+  transition: 0.4s ease-in-out;
+}
+
+.advance.weather {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  /* position: absolute; */
+  font-size: 3vh;
+  /* margin-left: -100vw; */
+  padding-top: -4vh;
+  transition: 0s ease-in-out;
+  line-height: 4vh;
+}
+
+.weatherDescription {
+  text-decoration: underline solid 1px;
+}
+
+.weatherDescription::first-letter {
+  text-transform: uppercase;
 }
 
 .weather-icon {
@@ -243,6 +300,10 @@ main {
   padding: 2vh;
   margin-left: auto;
   margin-right: auto;
-  max-height: 30vh;
+  margin-top: -2vh;
+  margin-bottom: -vh;
+  max-height: 26vh;
   max-width: 40vh;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
 }
