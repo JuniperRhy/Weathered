@@ -319,6 +319,8 @@ function App() {
         .then((result) => {
           setQuery("");
           setWeather(result);
+          setAdvancedClick(true);
+          setTempClick(false);
           console.log(result);
         });
     }
