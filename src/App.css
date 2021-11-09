@@ -280,6 +280,7 @@ main {
   font-size: 3vh;
   /* margin-left: -100vw; */
   padding-top: -4vh;
+  margin-bottom: -2.5vh;
   transition: 0s ease-in-out;
   line-height: 4vh;
 }
@@ -306,4 +307,16 @@ main {
   max-width: 40vh;
   cursor: pointer;
   transition: 0.4s ease-in-out;
+}
+
+.weather-icon svg {
+  transform: scale(1);
+  transition: all 0.5s ease;
+}
+.weather-icon svg:hover {
+  transform: scale(1.15);
+  transition: all 0.5s ease;
+}
+.weather-icon svg:active {
+  transform: scale(1.15);
 }

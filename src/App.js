@@ -249,7 +249,10 @@ function App() {
           </g>
         </svg>
       );
-    } else if (weather.weather[0].main === "Fog") {
+    } else if (
+      weather.weather[0].main === "Fog" ||
+      weather.weather[0].main === "Smoke"
+    ) {
       return (
         <svg
           version="1.1"
@@ -279,7 +282,7 @@ function App() {
           </g>
         </svg>
       );
-    } else if (weather.weather[0].main === "ist") {
+    } else if (weather.weather[0].main === "Mist") {
       return (
         <svg
           version="1.1"
@@ -309,6 +312,8 @@ function App() {
           </g>
         </svg>
       );
+    } else {
+      return "";
     }
   }
 
@@ -319,6 +324,8 @@ function App() {
         .then((result) => {
           setQuery("");
           setWeather(result);
+          setAdvancedClick(true);
+          setTempClick(false);
           console.log(result);
         });
     }
@@ -454,24 +461,23 @@ function App() {
                     <br />
                   </div>
                   <div>
+                    <div
+                      className="weather-icon"
+                      onClick={(e) => setAdvancedClick(!advancedClick)}
+                    >
+                      <WeatherIcon
+                        cl
+                        style={{
+                          cursor: "pointer",
+                        }}
+                      />
+                    </div>
                     {advancedClick ? (
                       <>
-                        <div
-                          className="weather-icon"
-                          onClick={(e) => setAdvancedClick(!advancedClick)}
-                        >
-                          <WeatherIcon />
-                        </div>
                         <div className="weather">{weather.weather[0].main}</div>{" "}
                       </>
                     ) : (
                       <>
-                        <div
-                          className="weather-icon"
-                          onClick={(e) => setAdvancedClick(!advancedClick)}
-                        >
-                          <WeatherIcon style={{ cursor: "pointer" }} />
-                        </div>
                         <div className="advance weather">
                           <div className="weatherDescription">
                             {weather.weather[0].description}
